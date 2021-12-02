@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonTemplate xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="932ff239-4e64-4816-8689-f8a180d7e532">
+  <name>РецептыРун</name>
+  <synonym>
+    <key>ru</key>
+    <value>Рецепты рун</value>
+  </synonym>
+</mdclass:CommonTemplate>

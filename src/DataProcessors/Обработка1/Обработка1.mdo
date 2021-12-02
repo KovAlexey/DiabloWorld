@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5c35753d-aaa6-4a2f-b50b-28d868addd36">
+  <producedTypes>
+    <objectType typeId="67d86016-2eba-4c38-91cf-9b97d0f26277" valueTypeId="827cc534-939f-4a75-bc01-19943c751fa1"/>
+    <managerType typeId="e544fd40-d7c9-4e79-9a71-580f6470a059" valueTypeId="4f4433e9-b97d-4e1e-bac5-2ef0370d23d5"/>
+  </producedTypes>
+  <name>Обработка1</name>
+  <useStandardCommands>true</useStandardCommands>
+</mdclass:DataProcessor>

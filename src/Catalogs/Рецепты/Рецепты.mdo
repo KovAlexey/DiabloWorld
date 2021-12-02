@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3ac69569-e74e-4deb-8e1b-433c6d6f6432">
+  <producedTypes>
+    <objectType typeId="507a4c0e-39b9-4dcd-9469-6204d9a8be9a" valueTypeId="9630f59c-ddd5-4f09-9cb4-dc7872efd71e"/>
+    <refType typeId="914272bb-73ca-43c0-bd53-6a91cfee2d13" valueTypeId="5da1233f-4233-4786-8977-f4ab1db5ac66"/>
+    <selectionType typeId="9b37aa10-d7a4-4a99-85f8-29f8c082e1cb" valueTypeId="a1363794-c215-4548-8dc5-0d0efe150747"/>
+    <listType typeId="d51577f8-d570-4acf-8ca3-d5657445204e" valueTypeId="7f0006ec-2864-4f6a-9305-ce1f63faab96"/>
+    <managerType typeId="c5fcbf39-6e70-4da1-9d34-af18cde82276" valueTypeId="270b96d0-90c0-469d-a616-a00932d53681"/>
+  </producedTypes>
+  <name>Рецепты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Рецепты</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Рецепты.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Рецепты.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="bb9a6be3-8f6f-40f6-a748-84dee7f8341e">
+    <name>Результат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Руны</types>
+      <types>CatalogRef.Камни</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="7998d14e-52b5-49e6-958d-2a59a74a16d4">
+    <producedTypes>
+      <objectType typeId="c124c2b4-4624-40b5-8bbc-5aa250fe964e" valueTypeId="7aca6b56-ccc7-47eb-8ae3-e1fec53ecfef"/>
+      <rowType typeId="f0c54a6c-907e-4058-8015-8c7c714e7586" valueTypeId="fbf311e6-fe1e-4969-8b4e-3ae74f4d403c"/>
+    </producedTypes>
+    <name>Рецепт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рецепт</value>
+    </synonym>
+    <attributes uuid="5da7cd07-fc07-40fe-903b-4aff011f2414">
+      <name>Предмет</name>
+      <synonym>
+        <key>ru</key>
+        <value>Предмет</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Руны</types>
+        <types>CatalogRef.Камни</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="3eb39cd2-ffca-42a7-ba41-a3f70eb1515c">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="596bc05c-1bd5-4b43-b009-d6b6eef79f83">
+  <name>Диабло</name>
+  <synonym>
+    <key>ru</key>
+    <value>Диабло</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>Document.Лут</content>
+  <content>Catalog.Руны</content>
+  <content>Catalog.РунныеСлова</content>
+  <content>Catalog.ВидыШмота</content>
+  <content>Catalog.Персонаж</content>
+  <content>Catalog.Камни</content>
+  <content>Catalog.Рецепты</content>
+  <content>Report.ДоступныеСлова</content>
+  <content>AccumulationRegister.Руны</content>
+  <content>Document.Крафт</content>
+  <content>DataProcessor.ЗагрузитьРуны</content>
+  <content>Document.РасчетВозможностей</content>
+</mdclass:Subsystem>

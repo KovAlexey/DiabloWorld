@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="17de3d01-2def-4ffc-8679-37b5106f1be4">
+  <producedTypes>
+    <objectType typeId="e1bb3eba-15b3-4adc-b222-82fcccf5d78d" valueTypeId="493a847f-d395-4fd6-beef-7bd47b275e3a"/>
+    <refType typeId="cfee4105-d0cd-4f5f-8343-29c69a4aacf3" valueTypeId="e1c34184-72bd-4084-9883-0d3e5f8d4de5"/>
+    <selectionType typeId="9afae121-7b23-4055-9aab-fef8f1040219" valueTypeId="a5ddee95-45f4-473d-aee3-8a3c89b80caa"/>
+    <listType typeId="0fcc09a2-645f-4786-a28d-0a7fa5e2f3e2" valueTypeId="0df62592-1cac-4494-a122-67e54da74098"/>
+    <managerType typeId="a54416a2-0744-4331-94b5-2567f76fcb5c" valueTypeId="6aebba35-3624-4a4f-a49e-094958a87d4d"/>
+  </producedTypes>
+  <name>Камни</name>
+  <synonym>
+    <key>ru</key>
+    <value>Камни</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Камни.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.Камни.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="833d6c83-401a-4ff0-9841-f1b83b51e8e3">
+    <name>НазваниеНаАнглийском</name>
+    <synonym>
+      <key>ru</key>
+      <value>Название на английском</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4abd2fca-097d-46fd-a8b2-4aa045d252c0">
+    <name>НаименованиеКамняАнглийское</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование камня английское</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="62c24c42-1916-43d8-9950-b7f0efa23bca">
+    <name>НаименованиеКамняРусское</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование камня русское</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6f9aa83e-221d-4bd3-9d41-649515050deb">
+    <name>Качество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Качество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>

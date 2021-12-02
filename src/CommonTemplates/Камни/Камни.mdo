@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonTemplate xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3f2afb49-89bd-4324-a6a8-77cba3b1c3a5">
+  <name>Камни</name>
+  <synonym>
+    <key>ru</key>
+    <value>Камни</value>
+  </synonym>
+</mdclass:CommonTemplate>

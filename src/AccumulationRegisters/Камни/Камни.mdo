@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="61dcd83c-b5e6-402e-ae4d-47c595a539cb">
+  <producedTypes>
+    <selectionType typeId="175ba305-89c9-4638-b7f5-81fca00f1ad7" valueTypeId="ea37c48d-988f-4120-9670-27149d26f54d"/>
+    <listType typeId="e81ba40c-ff8e-4169-8e99-0e4c658b67fd" valueTypeId="0e5308bf-41fb-4468-aa19-7f94a0c327d3"/>
+    <managerType typeId="60a33f2a-a2f4-4cef-95f8-57f13c912da8" valueTypeId="a3ee3d03-745d-43fc-8577-03569950f270"/>
+    <recordSetType typeId="b85e4e68-ab55-4c83-9564-b3d1e78cc98f" valueTypeId="3d111318-d2d8-40ec-9027-14db938a17ca"/>
+    <recordKeyType typeId="58c839a7-17f7-409d-aca1-cbc704d4d4d6" valueTypeId="fdf4509f-bace-4d58-87b9-c0e36bfba55a"/>
+    <recordType typeId="cbb6b5dc-4730-47fa-ac6e-0ffdf7cf2632" valueTypeId="10b4e71f-5510-4bd7-925e-79b1dc2efc72"/>
+  </producedTypes>
+  <name>Камни</name>
+  <synonym>
+    <key>ru</key>
+    <value>Камни</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="fd8c1317-bd43-4548-a4ed-8cdccec8a6a3">
+    <name>КоличествоВНаличии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество в наличии</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="7c51d46f-3d42-4318-ba20-5568b844c4cf">
+    <name>Камень</name>
+    <synonym>
+      <key>ru</key>
+      <value>Камень</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Камни</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

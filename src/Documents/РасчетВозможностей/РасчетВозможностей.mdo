@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d3b8f9ad-1748-4466-a374-3ed20623c790">
+  <producedTypes>
+    <objectType typeId="eac3ac02-9c3b-4313-9739-0d5f1e26664f" valueTypeId="a36dc16a-6c26-43b8-b5c6-865c63f18ae3"/>
+    <refType typeId="3b84434a-cdce-4a5e-9e2d-52f7b987c3c3" valueTypeId="99930d5d-a258-4aa8-81e1-62c8aa8ed65c"/>
+    <selectionType typeId="4e6d2afb-89da-4604-b4f2-679c78753dbb" valueTypeId="abca5b04-cb22-482d-98ff-08a6860d0162"/>
+    <listType typeId="d317a0b6-e18f-49e8-bd54-299ecedf7423" valueTypeId="80968a98-671c-4d51-89d2-514f2455d413"/>
+    <managerType typeId="5ef2977d-7d58-46ed-85e8-406137fd23dd" valueTypeId="989a6de3-2647-4cbe-8f02-53251e0f3a83"/>
+  </producedTypes>
+  <name>РасчетВозможностей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет возможностей</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.РасчетВозможностей.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.РасчетВозможностей.Form.ФормаДокумента</defaultObjectForm>
+  <posting>Deny</posting>
+  <realTimePosting>Deny</realTimePosting>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="d869eab8-741b-4f28-b933-f25a53b3b14f">
+    <name>ДеревоРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дерево расчета</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="0ad86620-e34d-4059-ba71-31db8ef9f8f3">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

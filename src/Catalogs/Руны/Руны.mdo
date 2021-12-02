@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="aa3f1f62-2213-4cac-9410-bcf181bf3c99">
+  <producedTypes>
+    <objectType typeId="d5fc8232-bae3-4795-9b0e-b53ec509279a" valueTypeId="a3e3315b-7a1f-42e0-bfba-32acfaba45e1"/>
+    <refType typeId="33e61c6d-5940-4255-8f09-cebbf4a7db91" valueTypeId="2b934b01-4e2a-4e33-bd98-d07bf0dfe581"/>
+    <selectionType typeId="1b587f1a-aedc-4deb-982f-d1cb89a6739e" valueTypeId="775ba64a-f13f-4a47-8629-7f9631889f4c"/>
+    <listType typeId="e6c17964-25f4-4471-b2c1-119489baa3cc" valueTypeId="526988a2-8a44-48f2-974c-f0a4ab34494b"/>
+    <managerType typeId="04412779-8ade-4d30-abed-f2a7c65e8485" valueTypeId="afd924a2-48ef-48ea-8b04-037be2d00050"/>
+  </producedTypes>
+  <name>Руны</name>
+  <synonym>
+    <key>ru</key>
+    <value>Руны</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Руны.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.Руны.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultListForm>Catalog.Руны.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="efa46967-29f7-4577-bde7-48af712b279a">
+    <name>ДвоичныеДанные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Двоичные данные</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d0507c82-8607-4b44-8088-8b8db8b0ae25">
+    <name>Картинка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Картинка</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6bb4e6b7-a2bd-492c-a44f-d76283156188">
+    <name>АнглийскоеНаименование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Английское наименование</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="f52cd98f-aaaf-4890-9589-31ddf115a8d1">
+    <producedTypes>
+      <objectType typeId="a98b5c66-874c-4a72-b6b7-46a4ea0c42ac" valueTypeId="79e2b29f-0ef6-46d7-b5d5-c45d70320f60"/>
+      <rowType typeId="afb3519d-a58a-4679-9947-67fd2c13041a" valueTypeId="da137a3a-e9ab-47f0-8a3b-cbbeaac614f0"/>
+    </producedTypes>
+    <name>ЭффектыОружия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Эффекты оружия</value>
+    </synonym>
+    <attributes uuid="36c4c4d3-c20b-49cd-bdf5-4729a47cfe5d">
+      <name>ЭффектОружия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Эффект оружия</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="38e1830b-4191-4f80-874b-e24393d2f8c0">
+    <producedTypes>
+      <objectType typeId="887fc7f5-47c1-4ed2-b6f2-7f3830d64003" valueTypeId="d5da5d28-bdbe-468d-9327-28fa7e3f1c6f"/>
+      <rowType typeId="49c8fe7c-73bc-48fc-a20f-54d0830f49a6" valueTypeId="37fa0d45-68e6-470b-95ab-75b37afddad0"/>
+    </producedTypes>
+    <name>ЭффектыБрони</name>
+    <synonym>
+      <key>ru</key>
+      <value>Эффекты брони</value>
+    </synonym>
+    <attributes uuid="cf536a11-f3ab-4149-a5c1-cc8939bc4f63">
+      <name>ЭффектБрони</name>
+      <synonym>
+        <key>ru</key>
+        <value>Эффект брони</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="449ad719-93ad-4284-88cb-5c10fd64e049">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

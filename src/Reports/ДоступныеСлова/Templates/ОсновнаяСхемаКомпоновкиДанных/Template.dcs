@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РунноеСлово</dataPath>
+			<field>РунноеСлово</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Руна</dataPath>
+			<field>Руна</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Шмот</dataPath>
+			<field>Шмот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Свойство</dataPath>
+			<field>Свойство</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерСтрокиРуна</dataPath>
+			<field>НомерСтрокиРуна</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер строки руна</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоВНаличииОстаток</dataPath>
+			<field>КоличествоВНаличииОстаток</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерСтрокиСвойство</dataPath>
+			<field>НомерСтрокиСвойство</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер строки свойство</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	РуныОстатки.Персонаж КАК Персонаж,
+	РуныОстатки.Руна КАК РунаПерсонаж,
+	РуныОстатки.КоличествоВНаличииОстаток КАК КоличествоВНаличииОстаток
+ПОМЕСТИТЬ ВТОстаткиРун
+ИЗ
+	РегистрНакопления.Руны.Остатки КАК РуныОстатки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	РунныеСловаРуны.Ссылка КАК РунноеСлово,
+	РунныеСловаРуны.Руна КАК Руна,
+	КОЛИЧЕСТВО(РунныеСловаРуны.Руна) КАК КоличествоРун
+ПОМЕСТИТЬ ВТРецепты
+ИЗ
+	Справочник.РунныеСлова.Руны КАК РунныеСловаРуны
+
+СГРУППИРОВАТЬ ПО
+	РунныеСловаРуны.Ссылка,
+	РунныеСловаРуны.Руна
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Подзапрос.РунноеСлово КАК РунноеСлово,
+	МИНИМУМ(Подзапрос.ВНаличии) КАК ВНаличии
+ПОМЕСТИТЬ ВТДоступныеРецепты
+ИЗ
+	(ВЫБРАТЬ
+		ВТОстаткиРун.Персонаж КАК Персонаж,
+		ВТРецепты.РунноеСлово КАК РунноеСлово,
+		ВТОстаткиРун.РунаПерсонаж КАК РунаПерсонаж,
+		ВТОстаткиРун.КоличествоВНаличииОстаток КАК КоличествоВНаличииОстаток,
+		ВТРецепты.Руна КАК Руна,
+		ВТРецепты.КоличествоРун КАК КоличествоРун,
+		ВЫБОР
+			КОГДА ЕСТЬNULL(ВТРецепты.КоличествоРун, 0) &lt;= ЕСТЬNULL(ВТОстаткиРун.КоличествоВНаличииОстаток, 0)
+					И ЕСТЬNULL(ВТОстаткиРун.КоличествоВНаличииОстаток, 0) &lt;&gt; 0
+				ТОГДА ИСТИНА
+			ИНАЧЕ ЛОЖЬ
+		КОНЕЦ КАК ВНаличии
+	ИЗ
+		ВТРецепты КАК ВТРецепты
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТОстаткиРун КАК ВТОстаткиРун
+			ПО ВТРецепты.Руна = ВТОстаткиРун.РунаПерсонаж
+	
+	СГРУППИРОВАТЬ ПО
+		ВТОстаткиРун.Персонаж,
+		ВТРецепты.РунноеСлово,
+		ВТРецепты.Руна,
+		ВТРецепты.КоличествоРун,
+		ВТОстаткиРун.РунаПерсонаж,
+		ВТОстаткиРун.КоличествоВНаличииОстаток) КАК Подзапрос
+
+СГРУППИРОВАТЬ ПО
+	Подзапрос.РунноеСлово
+
+ИМЕЮЩИЕ
+	(МИНИМУМ(Подзапрос.ВНаличии) = ИСТИНА
+		ИЛИ &amp;ПоказатьВсе)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТДоступныеРецепты.РунноеСлово КАК РунноеСлово,
+	РунныеСловаПоддерживаемыйШмот.Шмот КАК Шмот,
+	РунныеСловаРуны.Руна КАК Руна,
+	РунныеСловаСвойства.Свойство КАК Свойство,
+	РунныеСловаРуны.НомерСтроки КАК НомерСтрокиРуна,
+	ЕСТЬNULL(ВТОстаткиРун.КоличествоВНаличииОстаток, 0) КАК КоличествоВНаличииОстаток,
+	РунныеСловаСвойства.НомерСтроки КАК НомерСтрокиСвойство
+{ВЫБРАТЬ
+	РунноеСлово.*,
+	Шмот.*,
+	Руна.*,
+	Свойство,
+	НомерСтрокиРуна,
+	КоличествоВНаличииОстаток,
+	НомерСтрокиСвойство}
+ИЗ
+	ВТДоступныеРецепты КАК ВТДоступныеРецепты
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.РунныеСлова.Руны КАК РунныеСловаРуны
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТОстаткиРун КАК ВТОстаткиРун
+			ПО РунныеСловаРуны.Руна = ВТОстаткиРун.РунаПерсонаж
+		ПО ВТДоступныеРецепты.РунноеСлово = РунныеСловаРуны.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.РунныеСлова.Свойства КАК РунныеСловаСвойства
+		ПО ВТДоступныеРецепты.РунноеСлово = РунныеСловаСвойства.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.РунныеСлова.ПоддерживаемыйШмот КАК РунныеСловаПоддерживаемыйШмот
+		ПО ВТДоступныеРецепты.РунноеСлово = РунныеСловаПоддерживаемыйШмот.Ссылка,
+	ВТРецепты КАК ВТРецепты
+{ГДЕ
+	ВТДоступныеРецепты.РунноеСлово.*,
+	РунныеСловаПоддерживаемыйШмот.Шмот.*,
+	РунныеСловаРуны.Руна.*,
+	РунныеСловаСвойства.Свойство}
+
+СГРУППИРОВАТЬ ПО
+	ВТДоступныеРецепты.РунноеСлово,
+	РунныеСловаПоддерживаемыйШмот.Шмот,
+	РунныеСловаРуны.Руна,
+	РунныеСловаСвойства.Свойство,
+	РунныеСловаРуны.НомерСтроки,
+	ЕСТЬNULL(ВТОстаткиРун.КоличествоВНаличииОстаток, 0),
+	РунныеСловаСвойства.НомерСтроки
+
+УПОРЯДОЧИТЬ ПО
+	РунноеСлово,
+	НомерСтрокиРуна,
+	НомерСтрокиСвойство</query>
+		<autoFillFields>false</autoFillFields>
+	</dataSet>
+	<totalField>
+		<dataPath>Свойство</dataPath>
+		<expression>ВычислитьВыражениеСГруппировкойТаблицаЗначений("Свойство", "РунноеСлово, Свойство, НомерСтрокиСвойство")</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Руна</dataPath>
+		<expression>ВычислитьВыражениеСГруппировкойТаблицаЗначений("Руна, КоличествоВНаличииОстаток", "РунноеСлово, НомерСтрокиРуна")</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Шмот</dataPath>
+		<expression>ВычислитьВыражениеСГруппировкойТаблицаЗначений ("Шмот", "РунноеСлово, Шмот")</expression>
+	</totalField>
+	<parameter>
+		<name>ПоказатьВсе</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Показать все</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Свойство</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Шмот</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Руна</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПоказатьВсе</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>РунноеСлово.Уровень</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionAttributesPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>РунноеСлово</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>РунноеСлово.НаименованиеНаАнглийском</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>РунноеСлово.НаименованиеНаРунном</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>РунноеСлово.Уровень</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

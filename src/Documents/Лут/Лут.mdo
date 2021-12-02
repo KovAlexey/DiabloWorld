@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fd1f3422-3065-49e1-8d78-cfb2e9112197">
+  <producedTypes>
+    <objectType typeId="7f94da91-550c-4323-8ec5-4610edd5d9fa" valueTypeId="75291aff-000f-41c7-994b-835c19465bfd"/>
+    <refType typeId="a866af7b-e5b1-43f8-b2b0-6484b7350201" valueTypeId="558af0c9-f746-4c14-9f50-408cfd13a292"/>
+    <selectionType typeId="4e9211e8-b691-474a-a15c-d7a980efdc63" valueTypeId="878cc61e-4235-4d3b-954d-ed7c853f80b5"/>
+    <listType typeId="baa066c3-92c8-44df-ac0d-b5b96bc530c3" valueTypeId="a4c93559-fc46-4e42-9484-1802e5005c42"/>
+    <managerType typeId="24fd12c4-0605-4be8-81d1-34d018753b43" valueTypeId="f1a0f663-2725-48ed-a9de-6ded74ceac9e"/>
+  </producedTypes>
+  <name>Лут</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лут</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.Лут.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <numberPeriodicity>Year</numberPeriodicity>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.Лут.Form.ФормаДокумента</defaultObjectForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecords>AccumulationRegister.Камни</registerRecords>
+  <registerRecords>AccumulationRegister.Руны</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="5c43d8ae-8938-452c-9007-bedbe5d4c678">
+    <name>Персонаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Персонаж</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Персонаж</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="469e963a-b8aa-4831-acff-b01b7033f243">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="900b4587-b6a5-4b70-b143-80fc9147e508">
+    <producedTypes>
+      <objectType typeId="6c6eac4d-5298-4148-aec3-652b7834c862" valueTypeId="b1fd93a6-bc2e-4e41-8485-3ef057657dbc"/>
+      <rowType typeId="5de6492c-d44b-4a90-93e6-854de6232de9" valueTypeId="cb5e78f5-0aea-4571-965c-1029b83f3769"/>
+    </producedTypes>
+    <name>Руны</name>
+    <synonym>
+      <key>ru</key>
+      <value>Руны</value>
+    </synonym>
+    <attributes uuid="dfd41ade-73c3-43c9-b28e-7aaaeadc4ab6">
+      <name>Руна</name>
+      <synonym>
+        <key>ru</key>
+        <value>Руна</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Руны</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="55bd7e06-8fc3-4fd7-8a9d-a15933abd7f2">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d819c6e8-e9b4-495b-ae33-0e41210a583b">
+    <producedTypes>
+      <objectType typeId="dadd4de7-d79f-4e47-920a-d330100c53d9" valueTypeId="56b2e2b4-d59f-4e8a-9376-1c356ca0be32"/>
+      <rowType typeId="64a309ed-ae16-40f5-8c78-d655b1ac7ef0" valueTypeId="f19199a0-1b81-4c13-92f7-dabaf396e288"/>
+    </producedTypes>
+    <name>Камни</name>
+    <synonym>
+      <key>ru</key>
+      <value>Камни</value>
+    </synonym>
+    <attributes uuid="4d926221-376f-404c-a27a-856fbcea7775">
+      <name>Камень</name>
+      <synonym>
+        <key>ru</key>
+        <value>Камень</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Камни</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="61b63449-8cf4-42a0-a637-1cfa334ac857">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

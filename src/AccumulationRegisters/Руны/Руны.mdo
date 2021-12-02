@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a99d45be-15ea-4435-bce2-1c28c852498b">
+  <producedTypes>
+    <selectionType typeId="cdfe9616-2a5f-4ba2-a967-0dd6f538959d" valueTypeId="73d8f07b-0306-4e7c-b6e1-85c0db263232"/>
+    <listType typeId="0475a983-1450-48eb-9b64-29d4d4bc023a" valueTypeId="dd63f76c-72fc-4d42-b5ce-bc2587b9f0fa"/>
+    <managerType typeId="43006e19-8a1e-40ae-b61b-c2542ac13572" valueTypeId="c7c63979-e222-430b-8093-721ec10246b8"/>
+    <recordSetType typeId="b2dcb7c3-7f5b-4174-92df-7808a96f8501" valueTypeId="65272d54-b691-4356-9137-4d82e5ea5712"/>
+    <recordKeyType typeId="f9629ae2-d51b-448a-9301-5991a6e859c4" valueTypeId="eb278d54-f42c-42fd-a16e-e64eda951c9b"/>
+    <recordType typeId="c4be3beb-b687-4a4c-93c6-df1e938e4e6c" valueTypeId="2bc5e907-7b77-44fd-9535-08cdc533cd69"/>
+  </producedTypes>
+  <name>Руны</name>
+  <synonym>
+    <key>ru</key>
+    <value>Руны</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="eefd1684-25a9-46e4-a2ea-15d0d465e3ec">
+    <name>КоличествоВНаличии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество в наличии</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="273da87e-386b-487e-b9e5-ec22f3d90ead">
+    <name>Персонаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Персонаж</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Персонаж</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="6587d4b8-7331-47ca-b6f4-4b0fbbbab21b">
+    <name>Руна</name>
+    <synonym>
+      <key>ru</key>
+      <value>Руна</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Руны</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7a801957-9c49-44df-b257-73688d95fd06">
+  <producedTypes>
+    <objectType typeId="6fdbaa5b-caac-4b15-9a6b-81f63ff35682" valueTypeId="6c5b689c-f513-46b8-8830-90e488f15898"/>
+    <refType typeId="21680e50-7ae4-4b7d-afa8-3ff5bd927908" valueTypeId="750f67b7-4ff6-491e-ad72-331eb19c7fdf"/>
+    <selectionType typeId="7e107a75-dc6d-489e-a1a5-1231b48f0a05" valueTypeId="c1c4168f-ae60-4013-9b72-fe9a98515337"/>
+    <listType typeId="22f879fa-89fb-4a86-baa1-d63c6baee05c" valueTypeId="a681e463-2f87-4da2-bd55-bfb0846d04d2"/>
+    <managerType typeId="536c9a90-008c-4143-89ed-9fb58baf8e11" valueTypeId="9ea029d1-ca41-48f7-a200-6f84b41bb2ac"/>
+  </producedTypes>
+  <name>ВидыШмота</name>
+  <synonym>
+    <key>ru</key>
+    <value>Виды шмота</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ВидыШмота.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ВидыШмота.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+</mdclass:Catalog>

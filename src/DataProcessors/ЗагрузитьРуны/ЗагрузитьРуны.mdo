@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e55df483-ec25-4952-8915-76a86b1868b1">
+  <producedTypes>
+    <objectType typeId="3e05acb4-4b7f-4dc5-8dfd-b9bb7519da0a" valueTypeId="2218ca0d-df87-4418-af74-e279f79db0c6"/>
+    <managerType typeId="82276f3e-d00d-402d-81f9-f7973b14f246" valueTypeId="37419e15-b547-45c0-889d-6fcb9be72d09"/>
+  </producedTypes>
+  <name>ЗагрузитьРуны</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузить руны</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ЗагрузитьРуны.Form.Форма</defaultForm>
+  <forms uuid="652ede3b-12f3-446e-ae87-8f18279809b8">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>
